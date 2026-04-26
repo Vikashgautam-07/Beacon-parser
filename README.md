@@ -36,4 +36,4 @@ Hardware Abstraction Layers: I discovered that standard Windows drivers strip 80
 Packet Integrity: Handled NoneType and IndexError exceptions caused by packets missing the standard RadioTap header, ensuring the parser doesn't crash during large batch processing.
 
 ## 📜 License
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
