@@ -1,0 +1,4 @@
+data/*.pcap
+data/*.pcapng
+__pycache__/
+.vscode/
