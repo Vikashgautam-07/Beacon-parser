@@ -18,38 +18,22 @@ The tool is engineered with a **cross-layer fallback mechanism**, allowing it to
 * **Library:** [Scapy](https://scapy.net/) (Packet manipulation and decoding)
 * **Environment:** Tested on Linux (WSL2/Ubuntu) and Windows-based PCAP/PCAPNG dumps.
 
-## 📂 Project Structure
-```text
-.
-├── src/
-│   └── main.py          # Core logic for frame extraction and analysis
-├── data/                # Sample storage (Locally ignored via .gitignore)
-├── requirements.txt     # Python dependencies
-├── LICENSE              # MIT License
-└── README.md            # Project documentation
-🔧 Installation & Usage
-Clone the repository:
+## Install dependencies:
 
-Bash
-git clone [https://github.com/Vikashgautam-07/Beacon-parser.git](https://github.com/Vikashgautam-07/Beacon-parser.git)
-cd Beacon-parser
-Install dependencies:
-
-Bash
+```Bash
 pip install -r requirements.txt
 Run the parser:
 
-Bash
 # For native 802.11 management captures (Monitor Mode)
 python3 src/main.py data/wpa-Induction.pcap
 
 # For standard managed network captures (Windows/Standard Driver)
 python3 src/main.py data/myhome3.pcapng
-
-🧠 Engineering Challenges Overcome
+```
+## 🧠 Engineering Challenges Overcome
 Hardware Abstraction Layers: I discovered that standard Windows drivers strip 802.11 headers and present them as Ethernet II frames via the NDIS driver. I implemented a fallback to the Ethernet layer to ensure the tool provides device visibility even without Monitor Mode hardware.
 
 Packet Integrity: Handled NoneType and IndexError exceptions caused by packets missing the standard RadioTap header, ensuring the parser doesn't crash during large batch processing.
 
-📜 License
+## 📜 License
 Distributed under the MIT License. See LICENSE for more information.
